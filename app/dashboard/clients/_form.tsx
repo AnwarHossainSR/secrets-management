@@ -57,7 +57,7 @@ export function ClientForm({
             setName(e.target.value);
             if (!initial && !slug) setSlug(autoSlug(e.target.value));
           }}
-          className="mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+          className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
         />
       </label>
       <label className="block">
@@ -67,7 +67,7 @@ export function ClientForm({
           maxLength={6}
           value={slug}
           onChange={(e) => setSlug(e.target.value.toUpperCase())}
-          className="mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2 vk-mono"
+          className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2 vk-mono"
         />
       </label>
       <div>
@@ -89,7 +89,7 @@ export function ClientForm({
         <select
           value={status}
           onChange={(e) => setStatus(e.target.value)}
-          className="mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2 capitalize"
+          className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2 capitalize"
         >
           {STATUSES.map((s) => (
             <option key={s} value={s}>
@@ -99,7 +99,7 @@ export function ClientForm({
         </select>
       </label>
       <button type="submit" disabled={saving} className="vk-accent-bg rounded-lg px-4 py-2 font-medium disabled:opacity-60">
-        {saving ? "Saving…" : initial ? "Update Client" : "Create Client"}
+        {saving ? "Savingâ€¦" : initial ? "Update Client" : "Create Client"}
       </button>
     </form>
   );

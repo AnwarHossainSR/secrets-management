@@ -29,10 +29,10 @@ export default function SearchPage() {
         autoFocus
         value={q}
         onChange={(e) => setQ(e.target.value)}
-        placeholder="Search entries, fields, tagsâ€¦"
-        className="w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+        placeholder="Search entries, fields, tagsÃ¢â‚¬Â¦"
+        className="w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
       />
-      <div className="vk-card rounded-xl divide-y divide-[#232a3a]">
+      <div className="vk-card rounded-xl divide-y divide-[#222222]">
         {hits.length === 0 && q && (
           <p className="text-sm text-neutral-500 p-4 text-center">No matches</p>
         )}
@@ -40,7 +40,7 @@ export default function SearchPage() {
           <Link key={h._id} href={`/dashboard/entries/${h._id}`} className="block px-4 py-3 hover:bg-white/5">
             <div className="text-sm">{h.title}</div>
             <div className="text-xs text-neutral-500">
-              {h.clientName} Ã‚· {h.type}
+              {h.clientName} Ãƒâ€šÂ· {h.type}
             </div>
           </Link>
         ))}

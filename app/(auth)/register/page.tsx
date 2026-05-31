@@ -57,7 +57,7 @@ export default function RegisterPage() {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="input mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+            className="input mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
           />
         </label>
         <label className="block">
@@ -67,7 +67,7 @@ export default function RegisterPage() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="input mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+            className="input mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
           />
         </label>
         <label className="block">
@@ -78,7 +78,7 @@ export default function RegisterPage() {
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="input mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+            className="input mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
           />
         </label>
         {error && <p className="text-sm text-red-400">{error}</p>}
@@ -87,7 +87,7 @@ export default function RegisterPage() {
           disabled={loading}
           className="btn w-full vk-accent-bg rounded-lg py-2 font-medium disabled:opacity-60"
         >
-          {loading ? "Creating…" : "Create account"}
+          {loading ? "Creatingâ€¦" : "Create account"}
         </button>
       </form>
       <p className="text-sm text-neutral-400 mt-6 text-center">

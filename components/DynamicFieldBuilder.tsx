@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Plus, Trash2, EyeOff, Eye } from "lucide-react";
 
@@ -24,14 +24,14 @@ export function DynamicFieldBuilder({
             placeholder="Label"
             value={f.label}
             onChange={(e) => update(i, { label: e.target.value })}
-            className="col-span-4 bg-[#11141c] border vk-border rounded px-2 py-1.5 text-sm"
+            className="col-span-4 bg-[#1a1a1a] border vk-border rounded px-2 py-1.5 text-sm"
           />
           <input
             placeholder="Value"
             type={f.isSecret ? "password" : "text"}
             value={f.value}
             onChange={(e) => update(i, { value: e.target.value })}
-            className="col-span-6 bg-[#11141c] border vk-border rounded px-2 py-1.5 text-sm vk-mono"
+            className="col-span-6 bg-[#1a1a1a] border vk-border rounded px-2 py-1.5 text-sm vk-mono"
           />
           <button
             type="button"

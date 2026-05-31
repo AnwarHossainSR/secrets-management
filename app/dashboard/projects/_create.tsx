@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -59,7 +59,7 @@ export function ProjectCreate({ clients }: { clients: { _id: string; name: strin
             <select
               value={client}
               onChange={(e) => setClient(e.target.value)}
-              className="mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+              className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
             >
               {clients.map((c) => (
                 <option key={c._id} value={c._id}>
@@ -73,7 +73,7 @@ export function ProjectCreate({ clients }: { clients: { _id: string; name: strin
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+              className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
             />
           </label>
           <label className="block">
@@ -82,7 +82,7 @@ export function ProjectCreate({ clients }: { clients: { _id: string; name: strin
               rows={3}
               value={desc}
               onChange={(e) => setDesc(e.target.value)}
-              className="mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+              className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
             />
           </label>
         </div>

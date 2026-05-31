@@ -48,7 +48,7 @@ export default function LoginPage() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="input mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+            className="input mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
             placeholder="you@example.com"
           />
         </label>
@@ -59,8 +59,8 @@ export default function LoginPage() {
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="input mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
-            placeholder="••••••••"
+            className="input mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
+            placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
           />
         </label>
         {error && <p className="text-sm text-red-400">{error}</p>}
@@ -69,7 +69,7 @@ export default function LoginPage() {
           disabled={loading}
           className="btn w-full vk-accent-bg rounded-lg py-2 font-medium disabled:opacity-60"
         >
-          {loading ? "Signing inâ€¦" : "Sign in"}
+          {loading ? "Signing inÃ¢â‚¬Â¦" : "Sign in"}
         </button>
       </form>
       <p className="text-sm text-neutral-400 mt-6 text-center">

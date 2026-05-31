@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, type KeyboardEvent } from "react";
 import { X } from "lucide-react";
@@ -29,7 +29,7 @@ export function TagInput({ value, onChange }: { value: string[]; onChange: (next
   };
 
   return (
-    <div className="flex flex-wrap gap-1.5 bg-[#11141c] border vk-border rounded-lg px-2 py-1.5">
+    <div className="flex flex-wrap gap-1.5 bg-[#1a1a1a] border vk-border rounded-lg px-2 py-1.5">
       {value.map((t) => (
         <span key={t} className="inline-flex items-center gap-1 text-xs bg-white/5 px-2 py-0.5 rounded">
           {t}

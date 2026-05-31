@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -58,7 +58,7 @@ export function SettingsForms({ userName, userEmail }: { userName: string; userE
             <input
               value={userEmail}
               disabled
-              className="mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2 opacity-70"
+              className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2 opacity-70"
             />
           </label>
           <label className="block">
@@ -66,7 +66,7 @@ export function SettingsForms({ userName, userEmail }: { userName: string; userE
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+              className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
             />
           </label>
           <label className="block">
@@ -76,7 +76,7 @@ export function SettingsForms({ userName, userEmail }: { userName: string; userE
               minLength={8}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+              className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
             />
           </label>
           <button className="vk-accent-bg rounded-lg px-4 py-2 font-medium">Save</button>

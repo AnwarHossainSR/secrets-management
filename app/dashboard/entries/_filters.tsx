@@ -32,16 +32,16 @@ export function EntriesFilters({
     <div className="vk-card rounded-xl p-3 flex flex-wrap gap-2 items-center">
       <input
         defaultValue={initial.q ?? ""}
-        placeholder="Search title…"
+        placeholder="Search titleâ€¦"
         onKeyDown={(e) => {
           if (e.key === "Enter") update("q", (e.target as HTMLInputElement).value);
         }}
-        className="flex-1 min-w-40 bg-[#11141c] border vk-border rounded-md px-2 py-1.5 text-sm"
+        className="flex-1 min-w-40 bg-[#1a1a1a] border vk-border rounded-md px-2 py-1.5 text-sm"
       />
       <select
         defaultValue={initial.client ?? ""}
         onChange={(e) => update("client", e.target.value)}
-        className="bg-[#11141c] border vk-border rounded-md px-2 py-1.5 text-sm"
+        className="bg-[#1a1a1a] border vk-border rounded-md px-2 py-1.5 text-sm"
       >
         <option value="">All clients</option>
         {clients.map((c) => (
@@ -53,7 +53,7 @@ export function EntriesFilters({
       <select
         defaultValue={initial.type ?? ""}
         onChange={(e) => update("type", e.target.value)}
-        className="bg-[#11141c] border vk-border rounded-md px-2 py-1.5 text-sm"
+        className="bg-[#1a1a1a] border vk-border rounded-md px-2 py-1.5 text-sm"
       >
         <option value="">All types</option>
         {TYPES.map((t) => (
@@ -65,7 +65,7 @@ export function EntriesFilters({
       <select
         defaultValue={initial.environment ?? ""}
         onChange={(e) => update("environment", e.target.value)}
-        className="bg-[#11141c] border vk-border rounded-md px-2 py-1.5 text-sm"
+        className="bg-[#1a1a1a] border vk-border rounded-md px-2 py-1.5 text-sm"
       >
         <option value="">All envs</option>
         {ENVS.map((t) => (
@@ -77,7 +77,7 @@ export function EntriesFilters({
       <select
         defaultValue={initial.sort ?? "newest"}
         onChange={(e) => update("sort", e.target.value)}
-        className="bg-[#11141c] border vk-border rounded-md px-2 py-1.5 text-sm"
+        className="bg-[#1a1a1a] border vk-border rounded-md px-2 py-1.5 text-sm"
       >
         {SORTS.map((s) => (
           <option key={s.v} value={s.v}>

@@ -21,27 +21,34 @@ export function TopBar({ userName }: { userName?: string | null }) {
   }, []);
 
   return (
-    <header className="sticky top-0 z-10 vk-card border-b vk-border">
+    <header className="sticky top-0 z-10 vk-topbar border-b vk-border">
       <div className="flex items-center gap-3 px-4 py-3">
         <button
           onClick={() => setOpenSearch(true)}
-          className="flex-1 max-w-md flex items-center gap-2 bg-[#11141c] border vk-border rounded-lg px-3 py-2 text-sm text-neutral-400 hover:border-neutral-600"
+          className="flex-1 max-w-md flex items-center gap-2 vk-search rounded-md px-3 py-2 text-sm vk-faint hover:border-[var(--border-hover)]"
+          style={{ color: "var(--text-faint)" }}
         >
           <Search className="size-4" />
-          Search vaults… <span className="ml-auto text-[10px] border vk-border rounded px-1.5 py-0.5">âŒ˜K</span>
+          Search vaults...
+          <span
+            className="ml-auto text-[10px] rounded px-1.5 py-0.5"
+            style={{ border: "1px solid var(--border)", color: "var(--text-muted)" }}
+          >
+            Ctrl K
+          </span>
         </button>
         <div className="ml-auto flex items-center gap-2">
-          <Link href="/dashboard/history" className="p-2 rounded-lg hover:bg-white/5" title="History">
+          <Link href="/dashboard/history" className="p-2 rounded-md hover:bg-[var(--card-inner)] vk-muted" title="History">
             <History className="size-4" />
           </Link>
-          <button className="p-2 rounded-lg hover:bg-white/5" title="Notifications">
+          <button className="p-2 rounded-md hover:bg-[var(--card-inner)] vk-muted" title="Notifications">
             <Bell className="size-4" />
           </button>
           <div className="flex items-center gap-2 pl-2 border-l vk-border">
-            <span className="text-sm text-neutral-300 hidden sm:block">{userName ?? "User"}</span>
+            <span className="text-sm vk-text hidden sm:block">{userName ?? "User"}</span>
             <button
               onClick={() => signOut({ callbackUrl: "/login" })}
-              className="p-2 rounded-lg hover:bg-white/5"
+              className="p-2 rounded-md hover:bg-[var(--card-inner)] vk-muted"
               title="Sign out"
             >
               <LogOut className="size-4" />

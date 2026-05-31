@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { Plus } from "lucide-react";
 import { auth } from "@/lib/auth";
 import { dbConnect } from "@/lib/mongodb";
@@ -71,7 +71,7 @@ export default async function EntriesPage({
               <th className="text-left px-4 py-2">Updated</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#232a3a]">
+          <tbody className="divide-y divide-[#222222]">
             {items.length === 0 && (
               <tr>
                 <td colSpan={5} className="text-center py-8 text-neutral-500">

@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { Download, Plus, KeyRound, Users, Pin, Lock } from "lucide-react";
 import { auth } from "@/lib/auth";
 import { dbConnect } from "@/lib/mongodb";
@@ -152,7 +152,7 @@ export default async function DashboardPage() {
             Full history
           </Link>
         </div>
-        <div className="vk-card rounded-xl p-3 divide-y divide-[#232a3a]">
+        <div className="vk-card rounded-xl p-3 divide-y divide-[#222222]">
           {recent.length === 0 ? (
             <p className="text-sm text-neutral-500 p-4 text-center">No activity yet.</p>
           ) : (

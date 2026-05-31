@@ -85,7 +85,7 @@ export function EntryForm({
           required
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+          className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
         />
       </label>
 
@@ -95,7 +95,7 @@ export function EntryForm({
           <select
             value={type}
             onChange={(e) => setType(e.target.value)}
-            className="mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+            className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
           >
             {TYPES.map((t) => (
               <option key={t} value={t}>
@@ -109,7 +109,7 @@ export function EntryForm({
           <select
             value={environment}
             onChange={(e) => setEnvironment(e.target.value)}
-            className="mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+            className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
           >
             {ENVS.map((t) => (
               <option key={t} value={t}>
@@ -130,9 +130,9 @@ export function EntryForm({
               setClient(e.target.value);
               setProject("");
             }}
-            className="mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+            className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
           >
-            <option value="">Select…</option>
+            <option value="">Selectâ€¦</option>
             {clients.map((c) => (
               <option key={c._id} value={c._id}>
                 {c.name}
@@ -145,7 +145,7 @@ export function EntryForm({
           <select
             value={project}
             onChange={(e) => setProject(e.target.value)}
-            className="mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+            className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
           >
             <option value="">None</option>
             {clientProjects.map((p) => (
@@ -174,7 +174,7 @@ export function EntryForm({
           type="checkbox"
           checked={isPinned}
           onChange={(e) => setIsPinned(e.target.checked)}
-          className="accent-violet-500"
+          className="accent-amber-500"
         />
         <span className="text-sm">Pin to dashboard</span>
       </label>
@@ -185,7 +185,7 @@ export function EntryForm({
           rows={4}
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
-          className="mt-1 w-full bg-[#11141c] border vk-border rounded-lg px-3 py-2"
+          className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
         />
       </label>
 
@@ -194,7 +194,7 @@ export function EntryForm({
         disabled={saving}
         className="vk-accent-bg rounded-lg px-4 py-2 font-medium disabled:opacity-60"
       >
-        {saving ? "Saving…" : initial ? "Update Entry" : "Create Entry"}
+        {saving ? "Savingâ€¦" : initial ? "Update Entry" : "Create Entry"}
       </button>
     </form>
   );
