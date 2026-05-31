@@ -1,26 +1,82 @@
 @import "tailwindcss";
+@plugin "flyonui";
+@import "../node_modules/flyonui/variants.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@source inline("html.dark");
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-bg: #0b0d12;
+  --color-surface: #11141c;
+  --color-card: #161a24;
+  --color-border: #232a3a;
+  --color-border-soft: #1c2230;
+  --color-accent: #8b5cf6;       /* violet-500 */
+  --color-accent-strong: #7c3aed; /* violet-600 */
+  --color-success: #10b981;       /* emerald-500 */
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-text: #e6e8ee;
+  --color-muted: #8b93a7;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  color-scheme: dark;
+  --background: #0b0d12;
+  --foreground: #e6e8ee;
+}
+
+html, body {
+  background: var(--background);
+  color: var(--foreground);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  background-image:
+    radial-gradient(1200px 600px at 80% -10%, rgba(139, 92, 246, 0.08), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(16, 185, 129, 0.06), transparent 60%);
+  background-attachment: fixed;
+}
+
+.vk-card {
+  background: linear-gradient(180deg, #161a24 0%, #131722 100%);
+  border: 1px solid var(--color-border);
+}
+.vk-card:hover { border-color: #2e3650; }
+
+.vk-accent { color: var(--color-accent); }
+.vk-accent-bg {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-strong) 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 16px -4px rgba(124, 58, 237, 0.45);
+}
+.vk-accent-bg:hover { filter: brightness(1.08); }
+
+.vk-border { border-color: var(--color-border); }
+.vk-mono { font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+.vk-muted { color: var(--color-muted); }
+.vk-surface { background: var(--color-surface); }
+
+/* scrollbar */
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-thumb { background: #2a3146; border-radius: 4px; }
+*::-webkit-scrollbar-thumb:hover { background: #394266; }
+*::-webkit-scrollbar-track { background: transparent; }
+
+/* selection */
+::selection { background: rgba(139, 92, 246, 0.35); color: #fff; }
+
+/* inputs */
+input, select, textarea {
+  color-scheme: dark;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
 }
