@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -31,14 +31,14 @@ const NAV = [
 export function Sidebar({ clients }: { clients: { _id: string; name: string; slug: string; color: string }[] }) {
   const path = usePathname();
   return (
-    <aside className="hidden md:flex md:flex-col w-64 shrink-0 vk-card border-r vk-border h-screen sticky top-0">
+    <aside className="hidden md:flex md:flex-col w-64 shrink-0 vk-sidebar border-r vk-border h-screen sticky top-0">
       <div className="p-5 border-b vk-border flex items-center gap-3">
         <div className="size-9 rounded-lg vk-accent-bg grid place-items-center">
           <KeyRound className="size-5" />
         </div>
         <div>
-          <p className="font-semibold leading-tight">VaultKit</p>
-          <p className="text-xs text-neutral-400">Secrets Manager</p>
+          <p className="font-semibold leading-tight vk-text">VaultKit</p>
+          <p className="text-xs vk-muted">Secrets Manager</p>
         </div>
       </div>
       <nav className="flex-1 overflow-y-auto p-3 space-y-1">
@@ -56,24 +56,26 @@ export function Sidebar({ clients }: { clients: { _id: string; name: string; slu
               key={n.href}
               href={n.href}
               className={cn(
-                "flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition",
-                active ? "bg-violet-500/10 vk-accent" : "text-neutral-300 hover:bg-white/5"
+                "flex items-center gap-2.5 px-3 py-2 rounded-md text-sm transition",
+                active ? "vk-nav-active" : "vk-muted hover:vk-text hover:bg-[var(--card-inner)]"
               )}
+              style={!active ? { color: "var(--text-muted)" } : { color: "var(--text)" }}
             >
               <Icon className="size-4" />
               {n.label}
+              {active && <span className="vk-nav-active-dot ml-auto" />}
             </Link>
           );
         })}
 
         <div className="pt-5">
-          <p className="px-3 text-[10px] uppercase tracking-wider text-neutral-500 mb-2">Clients</p>
+          <p className="px-3 text-[10px] uppercase tracking-wider vk-faint mb-2">Clients</p>
           <div className="space-y-0.5">
             {clients.slice(0, 12).map((c) => (
               <Link
                 key={c._id}
                 href={`/dashboard/clients/${c._id}`}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-md text-sm text-neutral-300 hover:bg-white/5"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-md text-sm vk-muted hover:bg-[var(--card-inner)]"
               >
                 <span className="size-2 rounded-full" style={{ background: c.color }} />
                 <span className="truncate">{c.name}</span>

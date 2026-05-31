@@ -1,4 +1,4 @@
-﻿import type { LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 export function StatCard({
   label,
@@ -13,13 +13,16 @@ export function StatCard({
 }) {
   return (
     <div className="vk-card rounded-xl p-4 flex items-start gap-3">
-      <div className="size-10 rounded-lg bg-violet-500/10 grid place-items-center vk-accent">
+      <div
+        className="size-10 rounded-lg grid place-items-center"
+        style={{ background: "rgba(245,158,11,0.1)", color: "var(--amber)" }}
+      >
         <Icon className="size-5" />
       </div>
       <div className="min-w-0">
-        <p className="text-xs text-neutral-400">{label}</p>
-        <p className="text-2xl font-semibold mt-0.5">{value}</p>
-        {hint && <p className="text-xs text-neutral-500 mt-1">{hint}</p>}
+        <p className="text-xs vk-muted">{label}</p>
+        <p className="text-2xl font-semibold vk-text mt-0.5">{value}</p>
+        {hint && <p className="text-xs vk-faint mt-1">{hint}</p>}
       </div>
     </div>
   );
