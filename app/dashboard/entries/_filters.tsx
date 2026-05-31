@@ -32,7 +32,7 @@ export function EntriesFilters({
     <div className="vk-card rounded-xl p-3 flex flex-wrap gap-2 items-center">
       <input
         defaultValue={initial.q ?? ""}
-        placeholder="Search titleâ€¦"
+        placeholder="Search title…"
         onKeyDown={(e) => {
           if (e.key === "Enter") update("q", (e.target as HTMLInputElement).value);
         }}

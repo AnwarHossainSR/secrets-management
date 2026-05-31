@@ -17,7 +17,7 @@ export function ActivityFeedItem({
       <div className="flex-1 min-w-0">
         <p className="text-sm">
           <span className="capitalize">{action.replaceAll("_", " ")}</span>
-          {entryTitle && <span className="text-neutral-400"> â€” {entryTitle}</span>}
+          {entryTitle && <span className="text-neutral-400"> ”” {entryTitle}</span>}
         </p>
         <p className="text-xs text-neutral-500">{new Date(timestamp).toLocaleString()}</p>
       </div>

@@ -28,7 +28,7 @@ export default async function HistoryPage({
       <div className="vk-card rounded-xl p-3 flex gap-2 flex-wrap items-center text-sm">
         <input
           name="action"
-          placeholder="Filter by actionâ€¦"
+          placeholder="Filter by action…"
           defaultValue={sp.action ?? ""}
           className="bg-[#1a1a1a] border vk-border rounded-md px-2 py-1.5"
         />
