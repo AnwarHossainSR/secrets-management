@@ -42,7 +42,7 @@ export function SearchModal({ open, onClose }: { open: boolean; onClose: () => v
             value={q}
             onChange={(e) => setQ(e.target.value)}
             className="flex-1 bg-transparent outline-none text-sm"
-            placeholder="Search entries, fields, tags, clientsâ€¦"
+            placeholder="Search entries, fields, tags, clients…"
           />
           <button onClick={onClose} className="p-1 hover:bg-white/10 rounded">
             <X className="size-4" />
@@ -51,7 +51,7 @@ export function SearchModal({ open, onClose }: { open: boolean; onClose: () => v
         <div className="max-h-80 overflow-y-auto p-2">
           {hits.length === 0 && q && <p className="text-sm text-neutral-500 p-4 text-center">No matches</p>}
           {hits.length === 0 && !q && (
-            <p className="text-xs text-neutral-500 p-4 text-center">Start typing to searchâ€¦</p>
+            <p className="text-xs text-neutral-500 p-4 text-center">Start typing to search…</p>
           )}
           {hits.map((h) => (
             <Link
@@ -62,7 +62,7 @@ export function SearchModal({ open, onClose }: { open: boolean; onClose: () => v
             >
               <div className="text-sm">{h.title}</div>
               <div className="text-xs text-neutral-500">
-                {h.clientName} Ã‚· {h.type}
+                {h.clientName} · {h.type}
               </div>
             </Link>
           ))}

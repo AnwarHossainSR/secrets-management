@@ -13,12 +13,11 @@ export async function POST(req: Request) {
     return Response.json({ error: "Invalid input. Password >= 8 chars." }, { status: 400 });
   }
 
-  await dbConnect();
-
-  const existingCount = await User.countDocuments({});
-  if (!allow && existingCount > 0) {
-    return Response.json({ error: "Registration disabled" }, { status: 403 });
+  if (!allow) {
+    return Response.json({ error: "Registration is disabled" }, { status: 403 });
   }
+
+  await dbConnect();
   const existing = await User.findOne({ email });
   if (existing) return Response.json({ error: "Email already in use" }, { status: 409 });
 

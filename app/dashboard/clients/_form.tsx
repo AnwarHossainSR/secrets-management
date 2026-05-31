@@ -99,7 +99,7 @@ export function ClientForm({
         </select>
       </label>
       <button type="submit" disabled={saving} className="vk-accent-bg rounded-lg px-4 py-2 font-medium disabled:opacity-60">
-        {saving ? "Savingâ€¦" : initial ? "Update Client" : "Create Client"}
+        {saving ? "Saving…" : initial ? "Update Client" : "Create Client"}
       </button>
     </form>
   );

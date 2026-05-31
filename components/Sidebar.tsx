@@ -8,7 +8,6 @@ import {
   Users,
   FolderKanban,
   Tag,
-  Search,
   Trash2,
   Settings,
   History,
@@ -22,7 +21,6 @@ const NAV = [
   { href: "/dashboard/clients", label: "Clients", icon: Users },
   { href: "/dashboard/projects", label: "Projects", icon: FolderKanban },
   { href: "/dashboard/tags", label: "Tags", icon: Tag },
-  { href: "/dashboard/search", label: "Search", icon: Search },
   { href: "/dashboard/history", label: "History", icon: History },
   { href: "/dashboard/trash", label: "Trash", icon: Trash2 },
   { href: "/dashboard/settings", label: "Settings", icon: Settings },
@@ -44,7 +42,7 @@ export function Sidebar({ clients }: { clients: { _id: string; name: string; slu
       <nav className="flex-1 overflow-y-auto p-3 space-y-1">
         <Link
           href="/dashboard/entries/new"
-          className="flex items-center gap-2 vk-accent-bg rounded-lg px-3 py-2 text-sm font-medium mb-3"
+          className="flex items-center justify-center gap-2 vk-accent-bg rounded-md px-3 py-2 text-sm font-medium mb-3"
         >
           <Plus className="size-4" /> New Entry
         </Link>
@@ -57,7 +55,7 @@ export function Sidebar({ clients }: { clients: { _id: string; name: string; slu
               href={n.href}
               className={cn(
                 "flex items-center gap-2.5 px-3 py-2 rounded-md text-sm transition",
-                active ? "vk-nav-active" : "vk-muted hover:vk-text hover:bg-[var(--card-inner)]"
+                active ? "vk-nav-active" : "hover:bg-[var(--card-inner)]"
               )}
               style={!active ? { color: "var(--text-muted)" } : { color: "var(--text)" }}
             >
@@ -68,21 +66,24 @@ export function Sidebar({ clients }: { clients: { _id: string; name: string; slu
           );
         })}
 
-        <div className="pt-5">
-          <p className="px-3 text-[10px] uppercase tracking-wider vk-faint mb-2">Clients</p>
-          <div className="space-y-0.5">
-            {clients.slice(0, 12).map((c) => (
-              <Link
-                key={c._id}
-                href={`/dashboard/clients/${c._id}`}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-md text-sm vk-muted hover:bg-[var(--card-inner)]"
-              >
-                <span className="size-2 rounded-full" style={{ background: c.color }} />
-                <span className="truncate">{c.name}</span>
-              </Link>
-            ))}
+        {clients.length > 0 && (
+          <div className="pt-5">
+            <p className="px-3 text-[10px] uppercase tracking-wider vk-faint mb-2">Workspace</p>
+            <div className="space-y-0.5">
+              {clients.slice(0, 12).map((c) => (
+                <Link
+                  key={c._id}
+                  href={`/dashboard/clients/${c._id}`}
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-md text-sm hover:bg-[var(--card-inner)]"
+                  style={{ color: "var(--text-muted)" }}
+                >
+                  <span className="size-2 rounded-full" style={{ background: c.color }} />
+                  <span className="truncate">{c.name}</span>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </nav>
     </aside>
   );

@@ -132,7 +132,7 @@ export function EntryForm({
             }}
             className="mt-1 w-full bg-[#1a1a1a] border vk-border rounded-lg px-3 py-2"
           >
-            <option value="">Selectâ€¦</option>
+            <option value="">Select…</option>
             {clients.map((c) => (
               <option key={c._id} value={c._id}>
                 {c.name}
@@ -194,7 +194,7 @@ export function EntryForm({
         disabled={saving}
         className="vk-accent-bg rounded-lg px-4 py-2 font-medium disabled:opacity-60"
       >
-        {saving ? "Savingâ€¦" : initial ? "Update Entry" : "Create Entry"}
+        {saving ? "Saving…" : initial ? "Update Entry" : "Create Entry"}
       </button>
     </form>
   );
